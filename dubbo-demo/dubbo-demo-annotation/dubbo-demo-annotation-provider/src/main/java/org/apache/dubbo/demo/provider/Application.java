@@ -32,6 +32,7 @@ public class Application {
     }
 
     @Configuration
+    // 指定包下所有的Bean都会读取，并且以dubbo服务暴露出去
     @EnableDubbo(scanBasePackages = "org.apache.dubbo.demo.provider")
     @PropertySource("classpath:/spring/dubbo-provider.properties")
     static class ProviderConfiguration {
