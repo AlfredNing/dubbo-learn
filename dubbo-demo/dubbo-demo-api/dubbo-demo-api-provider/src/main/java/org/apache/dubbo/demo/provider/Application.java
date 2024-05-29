@@ -39,7 +39,9 @@ public class Application {
 
     private static void startWithBootstrap() {
         ServiceConfig<DemoServiceImpl> service = new ServiceConfig<>();
+        // 指定业务接口
         service.setInterface(DemoService.class);
+        // 指定实现
         service.setRef(new DemoServiceImpl());
 
         DubboBootstrap bootstrap = DubboBootstrap.getInstance();
