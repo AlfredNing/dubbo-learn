@@ -39,6 +39,7 @@ public class Application {
     }
 
     @Configuration
+    @EnableDubbo(scanBasePackages = "org.apache.dubbo.demo.consumer.comp")
     // 指定属性配置文件加载资源
     @PropertySource("classpath:/spring/dubbo-consumer.properties")
     @ComponentScan(value = {"org.apache.dubbo.demo.consumer.comp"})
