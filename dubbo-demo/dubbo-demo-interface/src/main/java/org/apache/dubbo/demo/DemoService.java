@@ -21,8 +21,18 @@ import java.util.concurrent.CompletableFuture;
 public interface DemoService {
 
 
+    /**
+     * 通用服务
+     * @param name
+     * @return
+     */
     String sayHello(String name);
 
+    /**
+     * 异步服务
+     * @param name
+     * @return
+     */
     default CompletableFuture<String> sayHelloAsync(String name) {
         return CompletableFuture.completedFuture(sayHello(name));
     }
