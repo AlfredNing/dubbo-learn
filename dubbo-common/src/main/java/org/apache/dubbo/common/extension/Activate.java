@@ -46,7 +46,7 @@ public @interface Activate {
     /**
      * Activate the current extension when one of the groups matches. The group passed into
      * {@link ExtensionLoader#getActivateExtension(URL, String, String)} will be used for matching.
-     *
+     *  修饰的实现类在provider端还是consumer端激活
      * @return group names to match
      * @see ExtensionLoader#getActivateExtension(URL, String, String)
      */
@@ -55,6 +55,7 @@ public @interface Activate {
     /**
      * Activate the current extension when the specified keys appear in the URL's parameters.
      * <p>
+     *     value 属性：修饰的实现类只在 URL 参数中出现指定的 key 时才会被激活。
      * For example, given <code>@Activate("cache, validation")</code>, the current extension will be return only when
      * there's either <code>cache</code> or <code>validation</code> key appeared in the URL's parameters.
      * </p>
@@ -85,7 +86,7 @@ public @interface Activate {
 
     /**
      * Absolute ordering info, optional
-     *
+     * order 属性：用来确定扩展实现类的排序。
      * @return absolute ordering info
      */
     int order() default 0;
